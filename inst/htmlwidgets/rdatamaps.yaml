@@ -1,0 +1,21 @@
+dependencies:
+- name: jquery
+  version: 2.1.3
+  src: htmlwidgets/lib/jquery
+  script: dist/jquery.min.js
+- name: d3
+  version: 3.5.3
+  src: htmlwidgets/lib/d3
+  script: d3.min.js
+- name: topojson
+  version: 1.6.18
+  src: htmlwidgets/lib/topojson
+  script: topojson.js
+- name: datamaps
+  version: 0.1.4
+  src: htmlwidgets/lib/datamaps
+  script:
+  - datamaps.all.js
+
+
+
