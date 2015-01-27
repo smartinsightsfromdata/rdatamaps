@@ -31,7 +31,7 @@ height:   x.height,
 scope: x.scope,
 done : function(datamap) {
   datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-    Shiny.onInputChange(id + "_click", {
+    Shiny.onInputChange(el.id, {
   name: geography.properties.name,
   '.nonce': Math.random()
 });

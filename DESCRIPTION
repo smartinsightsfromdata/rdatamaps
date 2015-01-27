@@ -1,6 +1,6 @@
 Package: rdatamaps
 Title: Interface to the datamaps Library, built on d3.js, for creating fantastic choropleth maps
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Mark", "DiMarco", role = c("aut", "cph"),
        comment = "d3library in htmlwidgets/lib, http://datamaps.github.io/"),

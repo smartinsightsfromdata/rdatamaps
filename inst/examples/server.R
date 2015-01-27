@@ -6,7 +6,9 @@ server = function(input, output, session) {
 observe ({
   if(is.null(input$map)) { return() }
   # browser()
-  print(input$map$name)
+  output$results = renderPrint({
+    input$map$name
+  })
 })
   ##
 

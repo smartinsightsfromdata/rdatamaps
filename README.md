@@ -19,5 +19,6 @@ The process of creating a choropleth for any geographical area is actually quite
 
 To start to use this library I suggest to study the examples.  I plan to prepare a blog as soon as I'll have time -:)
 
+This library in shiny has the really cool feature that passes back to the server the name of the country (or postcode, county etc.) you click in the UI. This allows then to display dynamically customer properties for that element in tables (or graphs, pie charts etc.)
 
 See the examples in ./inst/examples.
