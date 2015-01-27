@@ -5,45 +5,32 @@
 #' @import htmlwidgets
 #'
 #' @export
-rdatamaps <- function(message=NULL, dataUrl= NULL, width = NULL, height = NULL) {
-  # forward options using x
-  jsonstr1 <- ' {
-  "state_code": [ 1 ],
-  "year": [ 2013 ],
-  "type": [ "DOLOSOS" ],
-  "total": [     39 ],
-  "population": [ 1.253e+06 ],
-  "rate": [ 3.1126 ],
-  "name": [ "Aguascalientes" ],
-  "fillKey": [ "(1.94,7.16]" ]
-}'
-  jsonstr2 <- ' {
-  "state_code": [ 2 ],
-  "year": [ 2013 ],
-  "type": [ "DOLOSOS" ],
-  "total": [    775 ],
-  "population": [ 3.3832e+06 ],
-  "rate": [ 22.907 ],
-  "name": [ "Baja California" ],
-  "fillKey": [ "(22.8,59.2]" ]
-}'
-  df1 <- data.frame(jsonlite::fromJSON(jsonstr1),stringsAsFactors =F)
-  df2 <- data.frame(jsonlite::fromJSON(jsonstr2),stringsAsFactors =F)
-  df <- rbind(df1,df2)
-  df$states <- df$name
+rdatamaps <- function(
+  data = NULL,
+  scope = NULL,
+  fills = NULL,
+  projection = NULL,
+  dataUrl = NULL,
+  keyCol = NULL,
+  clng = NULL,
+  clat = NULL,
+  cwidth = NULL,
+  cheight = NULL,
+  width = NULL,
+  height = NULL) {
 
-  x <- list(params = list(
-    scope = 'states',
-    projection = 'mercator',
-    fills = list(
-      '(1.94,7.16]'= "#FFFFB2",
-      "(7.16,10.8]"= "#FECC5C",
-      "(10.8,14.3]"= "#FD8D3C",
-      "(14.3,22.8]"= "#F03B20",
-      "(22.8,59.2]"= "#BD0026"
-    )),
+
+  x <- list(
+    scope = scope,
+    projection = projection,
+    fills = fills,
     dataUrl = dataUrl,
-    data=df )
+    keyCol = keyCol,
+    clng = clng,
+    clat = clat,
+    width = cwidth,
+    height = cheight,
+    data= data)
 
   # create widget
   htmlwidgets::createWidget(
@@ -53,13 +40,13 @@ rdatamaps <- function(message=NULL, dataUrl= NULL, width = NULL, height = NULL) 
     height = height,
     package = 'rdatamaps'
   )
-}
+  }
 
 #' Widget output function for use in Shiny
 #'
 #' @export
-rdatamapsOutput <- function(outputId, width = '100%', height = '400px'){
-  print("shinyWidgetOutput")
+rdatamapsOutput <- function(outputId, width = '100%', height = '100%'){
+
   shinyWidgetOutput(outputId, 'rdatamaps', width, height, package = 'rdatamaps')
 }
 
@@ -67,7 +54,7 @@ rdatamapsOutput <- function(outputId, width = '100%', height = '400px'){
 #'
 #' @export
 renderRdatamaps <- function(expr, env = parent.frame(), quoted = FALSE) {
- # print("shinyRenderWidget")
+
   if (!quoted) { expr <- substitute(expr) } # force quoted
   shinyRenderWidget(expr, rdatamapsOutput, env, quoted = TRUE)
 }

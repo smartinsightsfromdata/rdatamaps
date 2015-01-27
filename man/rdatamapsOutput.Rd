@@ -4,7 +4,7 @@
 \alias{rdatamapsOutput}
 \title{Widget output function for use in Shiny}
 \usage{
-rdatamapsOutput(outputId, width = "100\%", height = "400px")
+rdatamapsOutput(outputId, width = "100\%", height = "100\%")
 }
 \description{
 Widget output function for use in Shiny

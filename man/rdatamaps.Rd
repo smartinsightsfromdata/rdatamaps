@@ -4,7 +4,9 @@
 \alias{rdatamaps}
 \title{<Add Title>}
 \usage{
-rdatamaps(message = NULL, dataUrl = NULL, width = NULL, height = NULL)
+rdatamaps(data = NULL, scope = NULL, fills = NULL, projection = NULL,
+  dataUrl = NULL, keyCol = NULL, clng = NULL, clat = NULL,
+  cwidth = NULL, cheight = NULL, width = NULL, height = NULL)
 }
 \description{
 <Add Description>

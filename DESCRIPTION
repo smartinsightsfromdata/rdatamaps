@@ -1,8 +1,18 @@
 Package: rdatamaps
-Title: What the package does (one line)
-Version: 0.0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (one paragraph)
+Title: Interface to the datamaps Library, built on d3.js, for creating fantastic choropleth maps
+Version: 0.1.0
+Authors@R: c(
+    person("Mark", "DiMarco", role = c("aut", "cph"),
+       comment = "d3library in htmlwidgets/lib, http://datamaps.github.io/"),
+    person("Enzo", "Martoglio", role = c("aut", "cre"),
+       comment = "R interface", email = "enzo@smartinsightsfromdata.com")
+    )
+Maintainer: Enzo Martoglio  <enzo@smartinsightsfromdata.com>
+Description: An access to one of the best geo library for choropleth pies based on d3 library - see http://datamaps.github.io/
 Depends: R (>= 3.1.2)
-License: What license is it under?
+Imports: htmlwidgets (>= 0.3.2)
+Enhances: shiny (>= 0.10.2.1)
+License: MIT + file LICENSE
+Materials: README
 LazyData: true
+URL: https://github.com/smartinsightsfromdata/
