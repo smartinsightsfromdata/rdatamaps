@@ -4,7 +4,7 @@ library(rdatamaps)
 
 server = function(input, output, session) {
 observe ({
-  if(is.null(input$map)) { return() }
+  if(length(input$map)==0) { return() }
   # browser()
   output$results = renderPrint({
     input$map$name
@@ -28,6 +28,8 @@ observe ({
       clat = 21,
       cwidth = 800,
       cheight = 400,
+      popup = "Total crimes in ",
+      popupVar = "total",
       width = NULL,
       height = NULL,
       dataUrl='mx_states.json')

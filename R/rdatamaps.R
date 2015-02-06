@@ -16,6 +16,8 @@ rdatamaps <- function(
   clat = NULL,
   cwidth = NULL,
   cheight = NULL,
+  popup = NULL,
+  popupVar = NULL,
   width = NULL,
   height = NULL) {
 
@@ -30,7 +32,9 @@ rdatamaps <- function(
     clat = clat,
     width = cwidth,
     height = cheight,
-    data= data)
+    data= data,
+    popup = popup,
+    popupVar = paste0("data.",popupVar))
 
   # create widget
   htmlwidgets::createWidget(
