@@ -45,6 +45,7 @@ setProjection:  function( element, options ) {
    var projection, path;
    projection = eval(x.projection)  // d3.geo.mercator()
     .center([x.clng, x.clat]).scale(element.offsetWidth)
+    .scale(x.scale)
     .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 
    path = d3.geo.path().projection( projection );
@@ -94,7 +95,7 @@ chartParams.data = groupedByJson;
 if (el.hasChildNodes()) {
    $(el).empty();
 }
-
+//console.log('chartParams '+ JSON.stringify(chartParams));
 var map = new Datamap(chartParams);
 map.legend();
 

@@ -28,6 +28,7 @@ observe ({
       clat = 21,
       cwidth = 800,
       cheight = 400,
+      scale = 400,
       popup = "Total crimes in ",
       popupVar = "total",
       width = NULL,

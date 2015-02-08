@@ -16,6 +16,7 @@ rdatamaps <- function(
   clat = NULL,
   cwidth = NULL,
   cheight = NULL,
+  scale= NULL,
   popup = NULL,
   popupVar = NULL,
   width = NULL,
@@ -33,6 +34,7 @@ rdatamaps <- function(
     width = cwidth,
     height = cheight,
     data= data,
+    scale = scale,
     popup = popup,
     popupVar = paste0("data.",popupVar))
 

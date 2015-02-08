@@ -6,8 +6,8 @@
 \usage{
 rdatamaps(data = NULL, scope = NULL, fills = NULL, projection = NULL,
   dataUrl = NULL, keyCol = NULL, clng = NULL, clat = NULL,
-  cwidth = NULL, cheight = NULL, popup = NULL, popupVar = NULL,
-  width = NULL, height = NULL)
+  cwidth = NULL, cheight = NULL, scale = NULL, popup = NULL,
+  popupVar = NULL, width = NULL, height = NULL)
 }
 \description{
 <Add Description>
